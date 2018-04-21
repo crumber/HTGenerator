@@ -1,3 +1,5 @@
+package HTGenerator;
+
 import java.util.*;
 
 public class Generator {
