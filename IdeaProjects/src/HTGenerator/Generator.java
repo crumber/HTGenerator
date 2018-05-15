@@ -4,9 +4,7 @@ import java.util.*;
 
 public class Generator {
 
-    public static void main(String[] args){
-
-
+    public static void main(String[] args) throws IOException {
 
         Scanner sc = new Scanner(System.in);
 
@@ -16,68 +14,42 @@ public class Generator {
         System.out.println("Inserire numero Trojan: ");
         int trojan = sc.nextInt();
 
-        Random r1= new Random();//generatore casuale trigger da 1 a T
+        ArrayList<String> triggers= new ArrayList<>();
 
-        ArrayList<String> registers= new ArrayList<String>();
+        //FileReader e BufferedReader per leggere i registri dal file che descrive l'architettura utilizzata
+        BufferedReader buff = new BufferedReader(new FileReader("Architecture.txt"));
 
         /*
-        Loop per aggiungere i registri della Cpu all arraylist
+        Loop per aggiungere i registri della Cpu all arraylist;
+        La prima riga dell'Architecture.txt viene saltata perchè descrive il tipo di architettura
+        che in questa versione del programma non è necessario sapere dato che si è lavorato esclusivamente sull'armv6,
+        potrà comunque essere utilizzata in futuro;
          */
-        for (int i=0; i<13; i++){
 
-            registers.add("r" + i);
+        String arch = buff.readLine();
+        String triggerType = buff.readLine();
+        triggerType = triggerType.substring(0,triggerType.length()-1);// tolgo i due punti finali
+        String reg = buff.readLine();
+
+        while (reg!=null){
+
+            triggers.add(reg);
+            reg = buff.readLine();
 
         }
 
-        registers.add("sp");
-        registers.add("lr");
-        registers.add("pc");
-        registers.add("cpsr");
+        buff.close();
 
-        FileWriter fileWriter = null;
+        if(triggerType.equals("Registers")){
 
-        try {
-            fileWriter = new FileWriter("GeneratedTrigger.txt");
-        } catch (IOException e) {
-            e.printStackTrace();
+            RegisterTrigger tr = new RegisterTrigger(triggers, arch);
+            tr.generate(trigger,trojan);
+
+        }else if(triggerType.equals("Instructions")){
+
+            InstructionTrigger tr = new InstructionTrigger(triggers, arch);
+            tr.generate(trigger,trojan);
+
         }
-
-        PrintWriter printWriter = new PrintWriter(fileWriter);
-
-            for (int i = 1; i <= trojan; i++) {
-
-                int t;
-                t = r1.nextInt(trigger - 1) + 1;
-
-                Collections.shuffle(registers); //mischia i registri in modo da prenderne sempre diversi per i trigger
-                Random r2 = new Random(); //generatore casuale numero coppie trigger
-
-                for (int j = 0; j < t; j++) {
-
-                    int nCoppie = r2.nextInt(17 - 1) + 1;
-
-                    for (int k = 0; k < nCoppie; k++) {
-
-                        Random r3 = new Random();
-                        String value = Integer.toHexString(r3.nextInt());
-                        printWriter.print(j + 1);
-                        printWriter.print("   " + registers.get(k));
-                        printWriter.print("  0x" + value + "\n");
-
-                        /*
-                        stampare su file il registro registers.get(k) più il valore casuale che deve contenere in esadecimale
-                         */
-
-                    }
-
-                }
-
-
-            }
-            printWriter.close();
-
-
-
-
     }
 }

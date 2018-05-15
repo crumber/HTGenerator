@@ -1,9 +1,10 @@
 
-zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(…ŞÁúÿÿÿÿ8ÁÛÇ­,
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(¤¸¤ûÿÿÿÿ8ÁÛÇ­,
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(¯ıÚİ8ÁÛÇ­,
-tsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(Ò£”8ÁÛÇ­,
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(ŠŠÜ8ÁÛÇ­,
+osquid:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(Ëª¨¶ûÿÿÿÿ8Ï‘ƒÿµ,
+osquid:S2677#"LUse or store the value returned from "readLine" instead of throwing it away.(È”¯øÿÿÿÿ8ïò…ÿµ,
+isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Üàÿ‘8Êøáşµ,
+Fsquid:S11485"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‡åõşµ,
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(ŠŠÜ8ÁÛÇ­,
+ysquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ò£”8ÁÛÇ­,
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(¯ıÚİ8ñå–şµ,
