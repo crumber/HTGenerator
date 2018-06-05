@@ -1,59 +1,53 @@
-1   r0  0xb20fb6c0
-1   pc  0x6e43eef6
-1   r1  0x31e88da4
-1   r7  0xcfb00eee
-1   r6  0x5e8ad939
-1   r10  0xbcbc40f3
+1   r11  0xbf0a9c15
+1   pc  0xe34dcff3
+1   r7  0x4bd33b3e
+1   r10  0x60dd408d
+1   r1  0xf11810de
+1   r5  0xfd5affea
+1   lr  0x41e6a26b
+1   sp  0x1615bea8
 
-2   r2  0xebfffd6f
-2   r7  0xc6c4acd3
-2   pc  0x72d7fac8
-2   sp  0x22479961
-2   lr  0x3a99fdde
-2   r4  0xdb3f8aa5
-2   r5  0xb3e4013b
-2   r11  0x338dacda
+2   r7  0xa39c63c7
+2   r5  0x3c9fdc90
 
-3   r7  0x777ebb84
-3   r5  0xbae506f9
-3   r11  0x1c351303
-3   r8  0xcb522888
+3   r1  0x9cd32219
+3   r6  0x3c6abdc0
 
-4   r1  0xf9dc54d1
-4   cpsr  0x50be38a
+4   r4  0x30be0274
+4   r0  0xbdb061df
+4   sp  0x2f1fdd9d
+4   r10  0xcf879e0e
+4   r1  0x794ecdc
+4   r6  0xd634c18b
+4   lr  0x71fdd244
 
-5   r0  0x7805e516
-5   pc  0xd1cf0446
-5   r7  0xe614e27d
-5   cpsr  0x8007ca60
-5   r1  0xbdc2f13f
-5   lr  0xcb982dc
-5   sp  0x222201d
-5   r4  0x4a531a00
-5   r2  0xe1dd7b59
+5   r7  0x2d574d22
 
-6   cpsr  0xbba7bf80
-6   r2  0x8f69c54f
-6   r3  0xcfc0588d
-6   r11  0xae715eb1
-6   r4  0x13b48bff
-6   r7  0x626eb7db
-6   r0  0x6940e6cb
-6   pc  0x8da4dd26
+6   r8  0xc5791fb2
+6   pc  0x529e444c
 
-7   r7  0xaffad934
-7   r2  0xf7b92f66
-7   lr  0x5c89b4
-7   r3  0xdb3886cf
-7   r10  0x523e6e2b
-7   r9  0x4b1e2361
-7   r4  0x41d4fb01
-7   r11  0x38e8a80c
+7   r4  0xfc4336c4
+7   r10  0x77de0061
+7   r8  0xd28dece5
+7   r0  0xe5612f95
+7   lr  0x5f6a4529
+7   r3  0xd1d78450
+7   r7  0x68d6ca5d
 
-8   sp  0xa78dffc2
-8   r4  0x58ed12da
-8   r10  0x49de86d7
-8   pc  0x14f086c6
-8   r0  0x836df147
-8   r2  0x865dd32b
+8   r10  0x8df777cf
+8   sp  0xc16b9d7e
+8   r4  0xc8ee4855
+8   r9  0x3835392
+8   pc  0x7a40e5e
+8   r2  0xf0b73570
+8   r0  0x2f09cf15
+
+9   r3  0xe53d46ab
+9   r8  0xbe6dd744
+9   r6  0x70ccca4c
+9   r0  0x2fe6229c
+9   r12  0x97e0a032
+
+10   r11  0xf39177c5
+10   r7  0x2943181e
 
