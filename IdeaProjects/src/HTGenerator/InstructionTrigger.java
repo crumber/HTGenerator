@@ -27,7 +27,7 @@ public class InstructionTrigger extends TriggerGenerator {
     @Override
     public void generate(int trojan, int trigger){
 
-        //Not implemented because it was not in the specifications of this project
+
 
     }
 

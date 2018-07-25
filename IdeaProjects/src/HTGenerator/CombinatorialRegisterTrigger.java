@@ -3,13 +3,13 @@ package HTGenerator;
 import java.io.*;
 import java.util.*;
 
-public class RegisterTrigger extends TriggerGenerator{
+public class CombinatorialRegisterTrigger extends TriggerGenerator{
 
     private Map<String,Integer> registerSetDimension;
     private List<String> registerSet;
     private String architecture;
 
-    public RegisterTrigger(Map<String,Integer> triggersDimension,List<String> triggers, String architecture){
+    public CombinatorialRegisterTrigger(Map<String,Integer> triggersDimension, List<String> triggers, String architecture){
 
         this.registerSetDimension = new HashMap<>();
         this.registerSetDimension = triggersDimension; //copy hashMap
@@ -22,9 +22,7 @@ public class RegisterTrigger extends TriggerGenerator{
     @Override
     public void generate(int trojan, int trigger) throws FileNotFoundException {
 
-        File file = new File("GeneratedTrigger.txt"); //create the output file that will contain
-
-        PrintWriter printWriter = new PrintWriter(file); //Prints formatted representations of objects to a text-output stream
+        PrintWriter printWriter = new PrintWriter(new FileOutputStream(new File("GeneratedTrigger.txt"), true)); //Prints formatted representations of objects to a text-output stream
         Random r1 = new Random();//class to generate random integers
 
         //loop on number of trojan that you want to generate

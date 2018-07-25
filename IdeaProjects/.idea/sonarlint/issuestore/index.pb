@@ -11,7 +11,11 @@ U
 %src/HTGenerator/TriggerGenerator.java,d/8/d8648d7c95b0819e0e6b3cc42e760ecfb0bb17f5
 W
 'src/HTGenerator/InstructionTrigger.java,8/e/8e060748f808c5f83f56b7d7130ee42118d69d83
-T
-$src/HTGenerator/RegisterTrigger.java,8/4/841e245c1d64296d0fee8923577d6c0a52fcc582
 N
 src/HTGenerator/Generator.java,8/0/809cedb1dc197f6f04e24c494b0af89d77de0dec
+8
+HWT.conf,4/7/474bb6a34ab5ee5312a75d30867e6fa6e437c7a2
+a
+1src/HTGenerator/CombinatorialRegisterTrigger.java,6/8/68c56a04421182a50c82228f2bbbb3b2db4f8776
+^
+.src/HTGenerator/SequentialRegisterTrigger.java,7/f/7f39109698a8655771c6028e5443d8ca2b84af0e

@@ -1,7 +1,10 @@
 
-hsquid:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(Ëª¨¶ûÿÿÿÿ
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(±‡­€ûÿÿÿÿ
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(ÆÊÎĞıÿÿÿÿ
-ysquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ò£”8Î¦ªà¼,
+asquid:S1854">Remove this useless assignment to local variable "triggerSet".(Œ¨ıÿÿÿÿ8ÅäÃ¡À,
+hsquid:S20955"EUse try-with-resources or close this "Scanner" in a "finally" clause.(Ôè™§ûÿÿÿÿ8 ·¸ŸÀ,
+ysquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ò£”8ĞÅ¸À,
+[squid:S1854U"8Remove this useless assignment to local variable "file".(–…Çîøÿÿÿÿ8é¿ª¡À,
+isquid:S1301="KReplace this "switch" statement by "if" statements to increase readability.(ÜŸ•8 ·¸ŸÀ,
+Lsquid:S1481U")Remove this unused "file" local variable.(–…Çîøÿÿÿÿ8é¿ª¡À,
+W"squid:SwitchLastCaseIsDefaultCheck=""Add a default case to this switch.(ÜŸ•8 ·¸ŸÀ,
+esquid:S2259"BA "NullPointerException" could be thrown; "line" is nullable here.(ò½âşÿÿÿÿ8­İáŸÀ,
+osquid:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(Ëª¨¶ûÿÿÿÿ8ĞÅ¸À,

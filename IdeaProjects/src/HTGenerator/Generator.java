@@ -5,34 +5,28 @@ import java.util.*;
 
 public class Generator {
 
+
+
     public static void main(String[] args) throws IOException {
 
-        Scanner sc = new Scanner(System.in);
-
-        //ask to user how much trojan want to generate
-        System.out.println("Insert number of Trojan: ");
-        int trojan = sc.nextInt();
-
-        //ask to user max number of triggers
-        System.out.println("Insert max number of Triggers: ");
-        int trigger = sc.nextInt();
 
         //I create an HashMap to save the triggers and their dimension from Architecture.txt
-        HashMap<String,Integer> triggersDimension = new HashMap<>();
+        HashMap<String,Integer> registersDimension = new HashMap<>();
+        ArrayList<String> instructionsType = new ArrayList<>();
 
         //FileReader and BufferedReader to read registers/instructions from the file that describes the architecture used
         BufferedReader buff = new BufferedReader(new FileReader("Architecture.txt"));
 
         String arch = buff.readLine(); //save the architecture from the first line of file, it could be useful in future
-        String triggerType = buff.readLine(); //save trigger type (registers or instructions)
-        triggerType = triggerType.substring(0,triggerType.length()-1); //to remove colon at the end of triggerType
+        String triggerSet = buff.readLine(); //save trigger type (registers or instructions)
+        triggerSet = triggerSet.substring(0,triggerSet.length()-1); //to remove colon at the end of triggerType
 
         String line = buff.readLine();
         String[] currentTrigger = line.split(" ");
 
-        while (line != null){ //read until the end of file
+        while (!line.equals("Instructions:")){ //read until the end of file
 
-            triggersDimension.put(currentTrigger[0],Integer.parseInt(currentTrigger[1]));//add currentTrigger to the ArrayList that contains the triggers
+            registersDimension.put(currentTrigger[0],Integer.parseInt(currentTrigger[1]));//add currentTrigger to the ArrayList that contains the triggers
             line = buff.readLine();
 
             if(line!=null) {
@@ -43,21 +37,52 @@ public class Generator {
 
         }
 
-        buff.close();
+        line = buff.readLine();
 
-        ArrayList<String> triggers = new ArrayList<>(triggersDimension.keySet()); //copy the triggers set to an ArrayList
 
-        //I exploit java inheritance to manage different types of triggers in a future development of this program
-        if(triggerType.equals("Registers")){
+        while (line != null ){ //read until the end of file
 
-            RegisterTrigger tr = new RegisterTrigger(triggersDimension, triggers, arch); //constructor with triggers set and architecture type
-            tr.generate(trojan,trigger);//method that generate random triggers with the inputs of the user
-
-        }else if(triggerType.equals("Instructions")){
-
-            InstructionTrigger tr = new InstructionTrigger(triggersDimension, triggers, arch);
-            tr.generate(trojan,trigger);
+            instructionsType.add(line);//add currentTrigger to the ArrayList that contains the triggers
+            line = buff.readLine();
 
         }
+
+        buff.close();
+
+        ArrayList<String> triggers = new ArrayList<>(registersDimension.keySet()); //copy the triggers set to an ArrayList
+        Scanner sc = new Scanner(new FileReader("HWT.conf"));
+        int trojan = Integer.parseInt(sc.nextLine());
+        ArrayList<String> trojanType = new ArrayList<>(Arrays.asList(sc.nextLine().split(",")));
+
+
+
+        for(String type : trojanType){
+
+            switch(type) {
+
+                case "1" :
+                    int trigger = sc.nextInt();
+                    CombinatorialRegisterTrigger tr1 = new CombinatorialRegisterTrigger(registersDimension, triggers, arch);
+                    Random random = new Random();
+                    int maxTrojan = random.nextInt(trojan)+1;
+                    trojan = trojan-maxTrojan;
+                    tr1.generate(maxTrojan,trigger);
+                    break;
+                case "2" :
+
+                    String[] parameters = sc.next().split(",");
+                    SequentialRegisterTrigger tr2 = new SequentialRegisterTrigger(registersDimension,triggers,arch,Integer.parseInt(parameters[0]));
+                    random = new Random();
+                    maxTrojan = random.nextInt(trojan)+1;
+                    trojan = trojan-maxTrojan;
+                    tr2.generate(maxTrojan,Integer.parseInt(parameters[1]));
+                    break;
+
+
+            }
+        }
+
+        File file = new File("GeneratedTrigger.txt");
+
     }
 }
