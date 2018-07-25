@@ -1,1 +1,1 @@
-# ing-sw-2018-Repole-Zanetti-Peruzzi
+# Hardware Trojan Generator
